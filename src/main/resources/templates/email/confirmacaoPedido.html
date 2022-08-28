@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Order Confirmation</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+
+        <div>
+            <h1> 
+                Nº do Pedido: 
+                <span th:text="${pedido.id}"></span> 
+            </h1>
+            <p>
+                Data: 
+                <span th:text="${#dates.format(pedido.instante, 'dd/MM/yyyy hh:mm')}"></span>
+            </p>
+            <p>
+                Nome do Cliente: 
+                <span th:text="${pedido.cliente.nome}"></span>
+            </p>
+
+            <p>
+                Email:
+                <span th:text="${pedido.cliente.email}"></span>
+            </p>
+
+            <h3>Telefones:</h3>
+            <ul>
+                <li th:each="item : ${pedido.cliente.telefones}">
+                    <span th:text="${item}"></span>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h3>Detalhes do pedido:</h3>
+            <table style="width: 100%">
+                <thead>
+                    <tr>
+                        <th style="text-align: center">Produto</th>
+                        <th style="text-align: center">Qtd de Vagas</th>
+                        <th style="text-align: center">Preço unitário</th>
+                        <th style="text-align: center">Valor</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="item : ${pedido.itens}">
+                        <td th:text="${item.produto.nome}">nome</td>
+                        <td th:text="${item.quantidade}" style="text-align: center">
+                            quantidade
+                        </td>
+                        <td th:text="${#numbers.formatDecimal(item.preco, 0, 'POINT', 2, 'COMMA')}" style="text-align: center">
+                            preco
+                        </td>
+                        <td th:text="${#numbers.formatDecimal(item.subtotal, 0, 'POINT', 2, 'COMMA')}" style="text-align: center">
+                            subTotal
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tfoot style="text-align: right;">
+                    Valor Final R$ <span th:text="${#numbers.formatDecimal(pedido.valorTotal, 0, 'POINT', 2, 'COMMA')}"></span>
+                </tfoot>
+            </table>
+        </div>
+
+    </body>
+</html>
