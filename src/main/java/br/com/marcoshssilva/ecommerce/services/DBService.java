@@ -2,6 +2,7 @@ package br.com.marcoshssilva.ecommerce.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.marcoshssilva.ecommerce.domain.Cliente;
@@ -15,11 +16,13 @@ public class DBService {
     ClienteRepository clienteRepository;
 
     @Autowired
-    private BCryptPasswordEncoder bcrypt;
+    private PasswordEncoder encoder;
 
     public void instanciateDatabase() {
         // Cadastrando um usuário ADMIN
-        Cliente cli = new Cliente(null, "Marcos Henrique", "marcoshssilva@email.com.br", bcrypt.encode("12345678910"));
+        Cliente cli = new Cliente(null, "Marcos Henrique", "marcoshssilva.dev@gmail.com", encoder.encode("12345678910"));
         cli.addPerfil(Perfil.ADMIN);
+
+        clienteRepository.save(cli);
     }
 }

@@ -1,6 +1,6 @@
 package br.com.marcoshssilva.ecommerce.resources;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import br.com.marcoshssilva.ecommerce.services.AuthService;

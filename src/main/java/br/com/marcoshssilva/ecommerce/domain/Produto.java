@@ -1,21 +1,15 @@
 package br.com.marcoshssilva.ecommerce.domain;
 
+import br.com.marcoshssilva.ecommerce.domain.enums.Opcao;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Produto implements Serializable {
@@ -30,6 +24,8 @@ public class Produto implements Serializable {
     private Double preco;
     private String imageUrl;
     private String imageSmallUrl;
+
+    private Opcao destaque;
     
     @Column(columnDefinition = "TEXT")
     private String descricao;
@@ -46,13 +42,14 @@ public class Produto implements Serializable {
     public Produto() {
     }
 
-    public Produto(Integer id, String nome, Double preco, String imageUrl, String imageSmallUrl, String descricao) {
+    public Produto(Integer id, String nome, Double preco, String imageUrl, String imageSmallUrl, String descricao, Opcao destaque) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.imageUrl = imageUrl;
         this.imageSmallUrl = imageSmallUrl;
         this.descricao = descricao;
+        this.destaque = destaque;
     }
     
     @JsonIgnore
@@ -126,6 +123,14 @@ public class Produto implements Serializable {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Opcao getDestaque() {
+        return destaque;
+    }
+
+    public void setDestaque(Opcao destaque) {
+        this.destaque = destaque;
     }
 
     @Override

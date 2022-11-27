@@ -3,8 +3,7 @@ package br.com.marcoshssilva.ecommerce.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
 public class ItemPedido implements Serializable {
