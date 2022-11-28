@@ -21,7 +21,7 @@ import br.com.marcoshssilva.ecommerce.domain.entities.Pedido;
 
 @RequestMapping(value = "/pedidos")
 @RestController
-public class PedidoResource {
+public class PedidoController {
 
     @Autowired
     private PedidoService serv;

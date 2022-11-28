@@ -18,7 +18,7 @@ import br.com.marcoshssilva.ecommerce.core.security.UserDetailsImpl;
 
 @RestController
 @RequestMapping(value = "/auth")
-public class AuthResource {
+public class AuthController {
     
     @Autowired
     private JwtUtils jwtUtils;

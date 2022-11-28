@@ -18,7 +18,7 @@ import br.com.marcoshssilva.ecommerce.domain.services.ProdutoService;
 
 @RestController
 @RequestMapping(value = "/cursos")
-public class ProdutoResource {
+public class ProdutoController {
 
     @Autowired
     private ProdutoService serv;

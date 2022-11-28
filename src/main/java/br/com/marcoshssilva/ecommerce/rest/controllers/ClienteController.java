@@ -31,7 +31,7 @@ import br.com.marcoshssilva.ecommerce.rest.dto.ClienteNewDTO;
 
 @RestController
 @RequestMapping(value = "/clientes")
-public class ClienteResource {
+public class ClienteController {
 
     @Autowired
     private ClienteService serv;
