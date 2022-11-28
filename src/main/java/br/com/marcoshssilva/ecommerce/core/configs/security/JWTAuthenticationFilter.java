@@ -1,12 +1,15 @@
 package br.com.marcoshssilva.ecommerce.core.configs.security;
 
+import br.com.marcoshssilva.ecommerce.domain.exceptions.models.StandardErrorModel;
 import br.com.marcoshssilva.ecommerce.rest.dto.CredenciaisDTO;
 import br.com.marcoshssilva.ecommerce.rest.utils.JwtUtils;
 import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.AuthorizationException;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -15,6 +18,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -58,23 +63,27 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
     }
 
-    private class JWTAuthenticationFailureHandler implements AuthenticationFailureHandler {
+    private static class JWTAuthenticationFailureHandler implements AuthenticationFailureHandler {
 
         @Override
         public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception)
                 throws IOException, ServletException {
-            response.setStatus(401);
-            response.setContentType("application/json");
-            response.getWriter().append(json());
+            var writer = response.getWriter();
+
+            response.setStatus(
+                    HttpStatus.UNAUTHORIZED.value());
+
+            response.setContentType(
+                    MediaType.APPLICATION_JSON_VALUE);
+
+            writer.append(this.json(HttpStatus.UNAUTHORIZED));
         }
 
-        private String json() {
-            long date = new Date().getTime();
-            return "{\"timestamp\": " + date + ", "
-                    + "\"status\": 401, "
-                    + "\"error\": \"Unauthorized\", "
-                    + "\"message\": \"Email e/ou senha inválidos\", "
-                    + "\"path\": \"/login\"}";
+        private String json(HttpStatus status) throws JsonProcessingException {
+            var errorModel = new StandardErrorModel(status.value(), status.getReasonPhrase(), "Email e/ou senha invalidos.", System.currentTimeMillis(), "/login");
+            var mapper = new ObjectMapper();
+
+            return mapper.writeValueAsString(errorModel);
         }
     }
 }
