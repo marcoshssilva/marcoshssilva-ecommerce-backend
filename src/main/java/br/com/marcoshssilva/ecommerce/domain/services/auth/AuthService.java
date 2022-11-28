@@ -9,6 +9,7 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,7 +19,7 @@ public class AuthService {
     private ClienteRepository clienteRepository;
     
     @Autowired
-    private BCryptPasswordEncoder bcrypt;
+    private PasswordEncoder encoder;
     
     @Autowired
     private EmailService emailService;
@@ -32,14 +33,14 @@ public class AuthService {
         }
         
         String newPass = newPassword();
-        c.setSenha(bcrypt.encode(newPass));
+        c.setSenha(encoder.encode(newPass));
         
         clienteRepository.save(c);
         emailService.sendNewPasswordEmail(c, newPass);
     }
 
     private String newPassword() {
-        char[] ver = new char[10];
+        char[] ver = new char[20];
         for (int i = 0; i < ver.length; i++) {
             ver[i] = randomChar();
         }
