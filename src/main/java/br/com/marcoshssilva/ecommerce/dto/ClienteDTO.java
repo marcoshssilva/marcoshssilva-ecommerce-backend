@@ -1,5 +1,6 @@
 package br.com.marcoshssilva.ecommerce.dto;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +15,8 @@ import br.com.marcoshssilva.ecommerce.domain.Cliente;
 @ClienteUpdate
 public class ClienteDTO implements Serializable {
 
-    private static final long serialVersionUID = 1l;
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     private Integer id;
     private String nome;

@@ -1,5 +1,6 @@
 package br.com.marcoshssilva.ecommerce.dto;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import javax.validation.constraints.Email;
@@ -12,7 +13,8 @@ import org.hibernate.validator.constraints.br.CPF;
 @ClienteInsert
 public class ClienteNewDTO implements Serializable {
 
-    public static final long serialVersionUID = 1l;
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     @NotEmpty(message = "O nome deve ser fornecido")
     @Length(min = 5, max = 255, message = "O nome deve conter entre 5 e 255 caracteres")

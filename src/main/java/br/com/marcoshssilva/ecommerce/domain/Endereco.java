@@ -2,6 +2,7 @@ package br.com.marcoshssilva.ecommerce.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -10,7 +11,8 @@ import jakarta.persistence.*;
 @Entity
 public class Endereco implements Serializable {
 
-    public static final long serialVersionUID = 1l;
+    @Serial
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

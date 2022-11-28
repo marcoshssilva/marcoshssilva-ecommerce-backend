@@ -1,10 +1,14 @@
 package br.com.marcoshssilva.ecommerce.dto;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import br.com.marcoshssilva.ecommerce.domain.Produto;
 
 public class ProdutoDTO implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     private Integer id;
     private String nome;

@@ -1,10 +1,12 @@
 package br.com.marcoshssilva.ecommerce.dto;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class CredenciaisDTO implements Serializable {
 
-    public static final long serialVersionUID = 1l;
+    @Serial
+    private static final long serialVersionUID = 1L;
     
     private String email;
     private String senha;

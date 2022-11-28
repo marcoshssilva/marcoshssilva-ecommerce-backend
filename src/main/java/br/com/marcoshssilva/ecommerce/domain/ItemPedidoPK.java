@@ -1,5 +1,6 @@
 package br.com.marcoshssilva.ecommerce.domain;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 import jakarta.persistence.*;
@@ -7,7 +8,8 @@ import jakarta.persistence.*;
 @Embeddable
 public class ItemPedidoPK implements Serializable {
 
-    public static final long serialVersionUID = 1l;
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     @ManyToOne()
     @JoinColumn(name = "pedido_id")
