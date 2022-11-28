@@ -1,8 +1,9 @@
-package br.com.marcoshssilva.ecommerce.domain.services;
+package br.com.marcoshssilva.ecommerce.domain.services.auth;
 
 import br.com.marcoshssilva.ecommerce.domain.entities.Cliente;
 import br.com.marcoshssilva.ecommerce.domain.repositories.ClienteRepository;
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.ObjectNotFoundException;
+import br.com.marcoshssilva.ecommerce.domain.services.email.EmailService;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.ObjectNotFoundException;
 
 import java.util.Random;
 

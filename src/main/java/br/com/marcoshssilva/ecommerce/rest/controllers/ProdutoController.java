@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.marcoshssilva.ecommerce.domain.entities.Produto;
 import br.com.marcoshssilva.ecommerce.rest.dto.ProdutoDTO;
-import br.com.marcoshssilva.ecommerce.domain.services.ProdutoService;
+import br.com.marcoshssilva.ecommerce.domain.services.data.ProdutoService;
 
 @RestController
 @RequestMapping(value = "/cursos")

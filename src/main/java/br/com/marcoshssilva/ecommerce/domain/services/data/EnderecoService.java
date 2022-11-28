@@ -1,8 +1,8 @@
-package br.com.marcoshssilva.ecommerce.domain.services;
+package br.com.marcoshssilva.ecommerce.domain.services.data;
 
 import br.com.marcoshssilva.ecommerce.domain.entities.Endereco;
 import br.com.marcoshssilva.ecommerce.domain.repositories.EnderecoRepository;
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.ObjectNotFoundException;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.ObjectNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

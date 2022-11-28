@@ -1,4 +1,4 @@
-package br.com.marcoshssilva.ecommerce.domain.services;
+package br.com.marcoshssilva.ecommerce.domain.services.email;
 
 import jakarta.mail.internet.MimeMessage;
 

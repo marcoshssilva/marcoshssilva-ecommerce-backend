@@ -1,6 +1,6 @@
 package br.com.marcoshssilva.ecommerce.rest.controllers;
 
-import br.com.marcoshssilva.ecommerce.domain.services.CategoriaService;
+import br.com.marcoshssilva.ecommerce.domain.services.data.CategoriaService;
 import br.com.marcoshssilva.ecommerce.domain.entities.Categoria;
 import br.com.marcoshssilva.ecommerce.rest.dto.CategoriaDTO;
 

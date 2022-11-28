@@ -2,14 +2,14 @@ package br.com.marcoshssilva.ecommerce.core.configs.profiles;
 
 import java.text.ParseException;
 
-import br.com.marcoshssilva.ecommerce.domain.services.DBService;
-import br.com.marcoshssilva.ecommerce.domain.services.EmailService;
+import br.com.marcoshssilva.ecommerce.domain.services.etc.DBService;
+import br.com.marcoshssilva.ecommerce.domain.services.email.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import br.com.marcoshssilva.ecommerce.domain.services.MockEmailService;
+import br.com.marcoshssilva.ecommerce.domain.services.email.MockEmailServiceImpl;
 
 @Configuration
 @Profile("test")
@@ -26,6 +26,6 @@ public class TestConfig {
 
     @Bean
     public EmailService emailService() {
-        return new MockEmailService();
+        return new MockEmailServiceImpl();
     }
 }

@@ -3,8 +3,8 @@ package br.com.marcoshssilva.ecommerce.rest.controllers;
 import jakarta.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import br.com.marcoshssilva.ecommerce.domain.services.AuthService;
-import br.com.marcoshssilva.ecommerce.domain.services.UserService;
+import br.com.marcoshssilva.ecommerce.domain.services.auth.AuthService;
+import br.com.marcoshssilva.ecommerce.domain.services.auth.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;

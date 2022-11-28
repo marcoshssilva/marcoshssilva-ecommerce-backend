@@ -1,8 +1,10 @@
-package br.com.marcoshssilva.ecommerce.domain.services;
+package br.com.marcoshssilva.ecommerce.domain.services.data;
 
 import java.util.Date;
 
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.ObjectNotFoundException;
+import br.com.marcoshssilva.ecommerce.domain.services.auth.UserService;
+import br.com.marcoshssilva.ecommerce.domain.services.email.EmailService;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

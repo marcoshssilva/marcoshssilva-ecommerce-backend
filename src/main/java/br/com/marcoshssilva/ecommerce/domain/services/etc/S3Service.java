@@ -1,11 +1,11 @@
-package br.com.marcoshssilva.ecommerce.domain.services;
+package br.com.marcoshssilva.ecommerce.domain.services.etc;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.FileException;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.FileException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

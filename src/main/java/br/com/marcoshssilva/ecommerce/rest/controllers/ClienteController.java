@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-import br.com.marcoshssilva.ecommerce.domain.services.ClienteService;
-import br.com.marcoshssilva.ecommerce.domain.services.UserService;
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.AuthorizationException;
+import br.com.marcoshssilva.ecommerce.domain.services.data.ClienteService;
+import br.com.marcoshssilva.ecommerce.domain.services.auth.UserService;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.AuthorizationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

@@ -2,7 +2,7 @@ package br.com.marcoshssilva.ecommerce.core.configs.security;
 
 import br.com.marcoshssilva.ecommerce.rest.dto.CredenciaisDTO;
 import br.com.marcoshssilva.ecommerce.rest.utils.JwtUtils;
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.AuthorizationException;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.AuthorizationException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

@@ -4,7 +4,7 @@ import java.net.URI;
 
 import javax.validation.Valid;
 
-import br.com.marcoshssilva.ecommerce.domain.services.PedidoService;
+import br.com.marcoshssilva.ecommerce.domain.services.data.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;

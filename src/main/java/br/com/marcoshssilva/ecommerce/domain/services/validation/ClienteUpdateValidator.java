@@ -14,7 +14,7 @@ import org.springframework.web.servlet.HandlerMapping;
 import br.com.marcoshssilva.ecommerce.domain.entities.Cliente;
 import br.com.marcoshssilva.ecommerce.rest.dto.ClienteDTO;
 import br.com.marcoshssilva.ecommerce.domain.repositories.ClienteRepository;
-import br.com.marcoshssilva.ecommerce.rest.exceptions.FieldError;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.models.FieldErrorModel;
 
 public class ClienteUpdateValidator implements ConstraintValidator<ClienteUpdate, ClienteDTO> {
     
@@ -35,13 +35,13 @@ public class ClienteUpdateValidator implements ConstraintValidator<ClienteUpdate
         Integer uriId = Integer.parseInt(map.get("id"));
         Cliente aux = repo.findByEmail(t.getEmail());
         
-        List<FieldError> list = new ArrayList<>();
+        List<FieldErrorModel> list = new ArrayList<>();
         
         if (!aux.equals(repo.findById(uriId))) {
-            list.add(new FieldError("email", "Email já está em uso.", t.getEmail()));
+            list.add(new FieldErrorModel("email", "Email já está em uso.", t.getEmail()));
         }
         
-        list.forEach((FieldError e) -> {
+        list.forEach((FieldErrorModel e) -> {
             cvc.disableDefaultConstraintViolation();
             cvc.buildConstraintViolationWithTemplate(e.getMessage()).addPropertyNode(e.getField()).addConstraintViolation();
         });

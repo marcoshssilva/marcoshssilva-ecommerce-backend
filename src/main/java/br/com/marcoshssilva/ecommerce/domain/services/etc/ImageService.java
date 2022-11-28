@@ -1,4 +1,4 @@
-package br.com.marcoshssilva.ecommerce.domain.services;
+package br.com.marcoshssilva.ecommerce.domain.services.etc;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -8,7 +8,7 @@ import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.FileException;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.FileException;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.imgscalr.Scalr;

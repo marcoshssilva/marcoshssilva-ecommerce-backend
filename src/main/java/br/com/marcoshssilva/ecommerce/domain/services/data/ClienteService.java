@@ -1,12 +1,15 @@
-package br.com.marcoshssilva.ecommerce.domain.services;
+package br.com.marcoshssilva.ecommerce.domain.services.data;
 
 import java.awt.image.BufferedImage;
 import java.net.URI;
 import java.util.List;
 
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.AuthorizationException;
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.DataIntegrityException;
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.ObjectNotFoundException;
+import br.com.marcoshssilva.ecommerce.domain.services.auth.UserService;
+import br.com.marcoshssilva.ecommerce.domain.services.etc.ImageService;
+import br.com.marcoshssilva.ecommerce.domain.services.etc.S3Service;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.AuthorizationException;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.DataIntegrityException;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataIntegrityViolationException;

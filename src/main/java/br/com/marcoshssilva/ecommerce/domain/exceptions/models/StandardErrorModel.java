@@ -1,8 +1,8 @@
-package br.com.marcoshssilva.ecommerce.rest.exceptions;
+package br.com.marcoshssilva.ecommerce.domain.exceptions.models;
 
 import java.io.Serializable;
 
-public class StandardError implements Serializable {
+public class StandardErrorModel implements Serializable {
 
         private Integer status;
         private String error;
@@ -11,7 +11,7 @@ public class StandardError implements Serializable {
         private String path;
 
 
-        public StandardError(Integer status, String error, String message, Long timestamp, String path) {
+        public StandardErrorModel(Integer status, String error, String message, Long timestamp, String path) {
                 this.status = status;
                 this.error = error;
                 this.message = message;

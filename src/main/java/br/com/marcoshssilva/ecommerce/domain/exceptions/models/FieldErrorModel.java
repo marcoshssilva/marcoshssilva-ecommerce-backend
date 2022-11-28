@@ -1,14 +1,14 @@
-package br.com.marcoshssilva.ecommerce.rest.exceptions;
+package br.com.marcoshssilva.ecommerce.domain.exceptions.models;
 
 import java.io.Serializable;
 
-public class FieldError implements Serializable {
+public class FieldErrorModel implements Serializable {
     
     private String field;
     private String message;
     private Object capturedData;
 
-    public FieldError(String field, String message, Object capturedData) {
+    public FieldErrorModel(String field, String message, Object capturedData) {
         this.field = field;
         this.message = message;
         this.capturedData = capturedData;

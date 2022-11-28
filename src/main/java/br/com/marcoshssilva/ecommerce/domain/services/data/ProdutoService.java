@@ -1,10 +1,10 @@
-package br.com.marcoshssilva.ecommerce.domain.services;
+package br.com.marcoshssilva.ecommerce.domain.services.data;
 
 import java.util.List;
 
 import br.com.marcoshssilva.ecommerce.domain.entities.Categoria;
 import br.com.marcoshssilva.ecommerce.domain.entities.Produto;
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.ObjectNotFoundException;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.ObjectNotFoundException;
 import br.com.marcoshssilva.ecommerce.domain.repositories.CategoriaRepository;
 import br.com.marcoshssilva.ecommerce.domain.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

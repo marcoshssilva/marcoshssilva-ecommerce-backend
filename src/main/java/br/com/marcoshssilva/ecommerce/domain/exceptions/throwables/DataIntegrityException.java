@@ -1,4 +1,4 @@
-package br.com.marcoshssilva.ecommerce.domain.services.exceptions;
+package br.com.marcoshssilva.ecommerce.domain.exceptions.throwables;
 
 public class DataIntegrityException extends RuntimeException {
 

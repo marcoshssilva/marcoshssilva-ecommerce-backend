@@ -1,4 +1,4 @@
-package br.com.marcoshssilva.ecommerce.domain.services;
+package br.com.marcoshssilva.ecommerce.domain.services.email;
 
 import jakarta.mail.internet.MimeMessage;
 import org.slf4j.Logger;
@@ -10,7 +10,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SMTPEmaiSenderService extends AbstractMailMessage {
+public class SMTPEmaiSenderServiceImpl extends AbstractMailMessage {
 
     @Autowired
     private MailSender mailSender;
@@ -18,7 +18,7 @@ public class SMTPEmaiSenderService extends AbstractMailMessage {
     @Autowired
     private JavaMailSender javaMailSender;
     
-    private static final Logger LOG = LoggerFactory.getLogger(SMTPEmaiSenderService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SMTPEmaiSenderServiceImpl.class);
     
     @Override
     public void sendEmail(SimpleMailMessage smm) {

@@ -1,4 +1,4 @@
-package br.com.marcoshssilva.ecommerce.domain.services;
+package br.com.marcoshssilva.ecommerce.domain.services.data;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import br.com.marcoshssilva.ecommerce.domain.entities.Categoria;
 import br.com.marcoshssilva.ecommerce.rest.dto.CategoriaDTO;
 import br.com.marcoshssilva.ecommerce.domain.repositories.CategoriaRepository;
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.DataIntegrityException;
-import br.com.marcoshssilva.ecommerce.domain.services.exceptions.ObjectNotFoundException;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.DataIntegrityException;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {
