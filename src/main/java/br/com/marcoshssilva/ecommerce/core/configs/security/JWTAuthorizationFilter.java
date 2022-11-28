@@ -1,4 +1,4 @@
-package br.com.marcoshssilva.ecommerce.core.security;
+package br.com.marcoshssilva.ecommerce.core.configs.security;
 
 import br.com.marcoshssilva.ecommerce.rest.utils.JwtUtils;
 import jakarta.servlet.FilterChain;

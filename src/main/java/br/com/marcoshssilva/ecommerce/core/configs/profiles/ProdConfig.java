@@ -1,4 +1,4 @@
-package br.com.marcoshssilva.ecommerce.core.configs;
+package br.com.marcoshssilva.ecommerce.core.configs.profiles;
 
 import br.com.marcoshssilva.ecommerce.domain.services.EmailService;
 import org.springframework.context.annotation.Bean;

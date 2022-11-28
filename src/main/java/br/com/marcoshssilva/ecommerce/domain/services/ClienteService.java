@@ -24,7 +24,7 @@ import br.com.marcoshssilva.ecommerce.rest.dto.ClienteDTO;
 import br.com.marcoshssilva.ecommerce.rest.dto.ClienteNewDTO;
 import br.com.marcoshssilva.ecommerce.domain.repositories.ClienteRepository;
 import br.com.marcoshssilva.ecommerce.domain.repositories.EnderecoRepository;
-import br.com.marcoshssilva.ecommerce.core.security.UserDetailsImpl;
+import br.com.marcoshssilva.ecommerce.core.configs.security.UserDetailsImpl;
 
 @Service
 public class ClienteService {

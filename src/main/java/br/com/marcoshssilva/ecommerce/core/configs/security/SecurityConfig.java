@@ -1,4 +1,4 @@
-package br.com.marcoshssilva.ecommerce.core.configs;
+package br.com.marcoshssilva.ecommerce.core.configs.security;
 
 import java.util.Arrays;
 
@@ -23,8 +23,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import br.com.marcoshssilva.ecommerce.core.security.JWTAuthenticationFilter;
-import br.com.marcoshssilva.ecommerce.core.security.JWTAuthorizationFilter;
 import br.com.marcoshssilva.ecommerce.rest.utils.JwtUtils;
 
 @EnableWebSecurity

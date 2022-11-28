@@ -3,7 +3,7 @@ package br.com.marcoshssilva.ecommerce.domain.services;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import br.com.marcoshssilva.ecommerce.core.security.UserDetailsImpl;
+import br.com.marcoshssilva.ecommerce.core.configs.security.UserDetailsImpl;
 
 @Service
 public class UserService {

@@ -15,7 +15,7 @@ import br.com.marcoshssilva.ecommerce.domain.entities.ItemPedido;
 import br.com.marcoshssilva.ecommerce.domain.entities.Pedido;
 import br.com.marcoshssilva.ecommerce.domain.repositories.ItemPedidoRepository;
 import br.com.marcoshssilva.ecommerce.domain.repositories.PedidoRepository;
-import br.com.marcoshssilva.ecommerce.core.security.UserDetailsImpl;
+import br.com.marcoshssilva.ecommerce.core.configs.security.UserDetailsImpl;
 
 @Service
 public class PedidoService {

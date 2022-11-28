@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.marcoshssilva.ecommerce.rest.dto.EmailDTO;
 import br.com.marcoshssilva.ecommerce.rest.utils.JwtUtils;
-import br.com.marcoshssilva.ecommerce.core.security.UserDetailsImpl;
+import br.com.marcoshssilva.ecommerce.core.configs.security.UserDetailsImpl;
 
 @RestController
 @RequestMapping(value = "/auth")

@@ -2,7 +2,7 @@ package br.com.marcoshssilva.ecommerce.domain.services;
 
 import br.com.marcoshssilva.ecommerce.domain.entities.Cliente;
 import br.com.marcoshssilva.ecommerce.domain.repositories.ClienteRepository;
-import br.com.marcoshssilva.ecommerce.core.security.UserDetailsImpl;
+import br.com.marcoshssilva.ecommerce.core.configs.security.UserDetailsImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
