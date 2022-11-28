@@ -4,7 +4,6 @@ import java.util.List;
 
 import br.com.marcoshssilva.ecommerce.domain.Categoria;
 import br.com.marcoshssilva.ecommerce.domain.Produto;
-import br.com.marcoshssilva.ecommerce.domain.enums.Opcao;
 import br.com.marcoshssilva.ecommerce.repositories.CategoriaRepository;
 import br.com.marcoshssilva.ecommerce.repositories.ProdutoRepository;
 import br.com.marcoshssilva.ecommerce.services.exceptions.ObjectNotFoundException;
@@ -35,6 +34,6 @@ public class ProdutoService {
 
     public Page<Produto> buscarEmDestaque(Integer page, Integer linesPerPage, String orderBy, String direction) {
         PageRequest pr = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-        return repo.findAllByDestaque(Opcao.YES, pr);
+        return repo.findAllByDestaque(Boolean.TRUE, pr);
     }
 }

@@ -1,6 +1,5 @@
 package br.com.marcoshssilva.ecommerce.domain;
 
-import br.com.marcoshssilva.ecommerce.domain.enums.Opcao;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -25,7 +24,7 @@ public class Produto implements Serializable {
     private String imageUrl;
     private String imageSmallUrl;
 
-    private Opcao destaque;
+    private Boolean destaque;
     
     @Column(columnDefinition = "TEXT")
     private String descricao;
@@ -42,7 +41,7 @@ public class Produto implements Serializable {
     public Produto() {
     }
 
-    public Produto(Integer id, String nome, Double preco, String imageUrl, String imageSmallUrl, String descricao, Opcao destaque) {
+    public Produto(Integer id, String nome, Double preco, String imageUrl, String imageSmallUrl, String descricao, Boolean destaque) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
@@ -125,11 +124,11 @@ public class Produto implements Serializable {
         this.descricao = descricao;
     }
 
-    public Opcao getDestaque() {
+    public Boolean getDestaque() {
         return destaque;
     }
 
-    public void setDestaque(Opcao destaque) {
+    public void setDestaque(Boolean destaque) {
         this.destaque = destaque;
     }
 
