@@ -67,14 +67,14 @@ public class CategoriaController {
     @GetMapping
     public ResponseEntity<List<CategoriaDTO>> buscarTodos() {
         List<Categoria> l = serv.buscarTodos();
-        List<CategoriaDTO> lDto = l.stream().map(item -> new CategoriaDTO(item)).collect(Collectors.toList());
+        List<CategoriaDTO> lDto = l.stream().map(CategoriaDTO::new).collect(Collectors.toList());
 
         return ResponseEntity.ok().body(lDto);
     }
 
     @GetMapping(value = "/page")
     public ResponseEntity<Page<CategoriaDTO>> encontrarPagina(@RequestParam(value = "row", defaultValue = "0") Integer npagina, @RequestParam(value = "linesPerPage", defaultValue = "24") Integer quantidade, @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy, @RequestParam(value = "direction", defaultValue = "ASC") String direction) {
-        Page<CategoriaDTO> l = serv.encontrarPagina(npagina, quantidade, orderBy, direction).map(i -> new CategoriaDTO(i));
+        Page<CategoriaDTO> l = serv.encontrarPagina(npagina, quantidade, orderBy, direction).map(CategoriaDTO::new);
         return ResponseEntity.ok().body(l);
     }
 

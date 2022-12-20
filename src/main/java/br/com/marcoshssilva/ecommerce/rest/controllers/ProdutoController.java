@@ -31,13 +31,13 @@ public class ProdutoController {
     @GetMapping(value = "/")
     public ResponseEntity<Page<ProdutoDTO>> encontrarPagina(@RequestParam(value = "nome", defaultValue = "") String nome, @RequestParam(value = "categorias", defaultValue = "") String categorias, @RequestParam(value = "page", defaultValue = "0") Integer page, @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage, @RequestParam(value = "direction", defaultValue = "ASC") String direction, @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy) {
         List<Integer> ids = UrlUtils.decodeIntList(UrlUtils.decodeParam(categorias));
-        Page<ProdutoDTO> l = serv.buscar(nome, ids, page, linesPerPage, orderBy, direction).map(i -> new ProdutoDTO(i));
+        Page<ProdutoDTO> l = serv.buscar(nome, ids, page, linesPerPage, orderBy, direction).map(ProdutoDTO::new);
         return ResponseEntity.ok().body(l);
     }
 
     @GetMapping(value = "/destaque")
     public ResponseEntity<Page<ProdutoDTO>> buscarEmDestaque(@RequestParam(value = "page", defaultValue = "0") Integer page, @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage, @RequestParam(value = "direction", defaultValue = "ASC") String direction, @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy) {
-        Page<ProdutoDTO> l = serv.buscarEmDestaque(page, linesPerPage, orderBy, direction).map(i -> new ProdutoDTO(i));
+        Page<ProdutoDTO> l = serv.buscarEmDestaque(page, linesPerPage, orderBy, direction).map(ProdutoDTO::new);
         return ResponseEntity.ok(l);
     }
 }

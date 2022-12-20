@@ -71,14 +71,14 @@ public class ClienteController {
     @GetMapping
     public ResponseEntity<List<ClienteDTO>> buscarTodos() {
         List<Cliente> l = serv.buscarTodos();
-        List<ClienteDTO> lDto = l.stream().map(item -> new ClienteDTO(item)).collect(Collectors.toList());
+        List<ClienteDTO> lDto = l.stream().map(ClienteDTO::new).collect(Collectors.toList());
         return ResponseEntity.ok().body(lDto);
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/page")
     public ResponseEntity<List<ClienteDTO>> encontrarPagina(@RequestParam(value = "row", defaultValue = "0") Integer npagina, @RequestParam(value = "linesPerPage", defaultValue = "24") Integer quantidade, @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy, @RequestParam(value = "direction", defaultValue = "ASC") String direction) {
-        List<ClienteDTO> l = serv.encontrarPagina(npagina, quantidade, orderBy, direction).map(i -> new ClienteDTO(i)).toList();
+        List<ClienteDTO> l = serv.encontrarPagina(npagina, quantidade, orderBy, direction).map(ClienteDTO::new).toList();
         return ResponseEntity.ok().body(l);
     }
 

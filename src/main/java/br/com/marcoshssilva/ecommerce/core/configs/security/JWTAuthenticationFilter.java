@@ -1,17 +1,12 @@
 package br.com.marcoshssilva.ecommerce.core.configs.security;
 
 import br.com.marcoshssilva.ecommerce.domain.exceptions.models.StandardErrorModel;
+import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.AuthorizationException;
 import br.com.marcoshssilva.ecommerce.rest.dto.CredenciaisDTO;
 import br.com.marcoshssilva.ecommerce.rest.utils.JwtUtils;
-import br.com.marcoshssilva.ecommerce.domain.exceptions.throwables.AuthorizationException;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Date;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -26,6 +21,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 

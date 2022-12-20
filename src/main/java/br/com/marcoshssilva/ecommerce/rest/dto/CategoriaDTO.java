@@ -31,7 +31,7 @@ public class CategoriaDTO implements Serializable {
         this.id = c.getId();
         this.nome = c.getNome();
         this.imageUrl = c.getImageUrl();
-        this.produtos = c.getProdutos().stream().map(i -> new ProdutoDTO(i)).collect(Collectors.toList());
+        this.produtos = c.getProdutos().stream().map(ProdutoDTO::new).collect(Collectors.toList());
     }
 
     public Integer getId() {
